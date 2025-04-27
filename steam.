@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign in through Steam</title>
+  <link rel="icon" href="https://store.cloudflare.steamstatic.com/public/shared/images/favicon.ico" type="image/x-icon">
+  <style>
+    body {
+      background-color: #171a21;
+      color: #c7d5e0;
+      font-family: "Motiva Sans", sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background-color: #2a2f3a;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.7);
+      width: 350px;
+      text-align: center;
+    }
+    .login-box img {
+      width: 200px;
+      margin-bottom: 20px;
+    }
+    input {
+      margin: 10px 0;
+      padding: 10px;
+      width: 90%;
+      border: 1px solid #4e5d6c;
+      background: #1b2838;
+      color: white;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #66c0f4;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      width: 95%;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #417a9b;
+    }
+    .message {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #66c0f4;
+    }
+    .small-text {
+      margin-top: 10px;
+      font-size: 12px;
+      color: #8f98a0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <img src="https://steamcommunity-a.akamaihd.net/public/shared/images/header/globalheader_logo.png" alt="Steam">
+  <h2>Sign in through Steam</h2>
+  <input type="text" id="login" placeholder="Steam username"><br>
+  <input type="password" id="password" placeholder="Password"><br>
+  <button onclick="login()">Sign In</button>
+  <div class="small-text">Secure login through Steam's network.</div>
+  <div class="message" id="message"></div>
+</div>
+
+<script>
+  function login() {
+    let login = document.getElementById('login').value;
+    let password = document.getElementById('password').value;
+    
+    document.getElementById('message').innerHTML = `
+      <hr><br>
+      Gotcha!<br>
+      Your login: <b>${login}</b><br>
+      Your password: <b>${password}</b><br><br>
+      Don't trust fake Steam logins! Stay safe, gamer!
+    `;
+  }
+</script>
+
+</body>
+</html>
